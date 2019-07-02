@@ -8,5 +8,8 @@ const sendPrivatePolicy = policyFile => (_, res) => {
 }
 
 app.get('/spin-the-bottle', sendPrivatePolicy('spin-the-bottle.html'))
+app.get('/', (_, res) => {
+  res.sendFile(path.join(`${__dirname}/home.html`))
+})
 
 app.listen(port, () => console.log(`Policy host is running on port ${port}!`))
