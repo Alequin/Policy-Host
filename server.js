@@ -8,6 +8,7 @@ const sendPrivatePolicy = policyFile => (_, res) => {
 }
 
 app.get('/spin-the-bottle', sendPrivatePolicy('spin-the-bottle.html'))
+app.get('/pentagram', sendPrivatePolicy('pentagram.html'))
 app.get('/', (_, res) => {
   res.sendFile(path.join(`${__dirname}/home.html`))
 })
